@@ -1,0 +1,7 @@
+<launch>
+  <node name="servo_server" pkg="moveit_servo" type="servo_server" output="screen" >
+    <param name="parameter_ns" type="string" value="optional_parameter_namespace" />
+    <rosparam command="load" file="$(find ur5_joystick_control)/config/ur5_simulated_config.yaml" />
+  </node>
+
+</launch>

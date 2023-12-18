@@ -1,0 +1,34 @@
+use_gazebo: true 
+command_in_type: "speed_units" 
+scale:
+  linear:  0.6  
+  rotational:  0.3 
+  joint: 0.01 
+low_pass_filter_coeff: 2.  .
+publish_period: 0.08  
+publish_delay: 0.005 
+command_out_type: std_msgs/Float64MultiArray 
+publish_joint_positions: true
+publish_joint_velocities: false
+publish_joint_accelerations: false
+move_group_name:  manipulator  
+planning_frame: base_link  
+ee_frame_name: wrist_3_link  
+robot_link_command_frame:  base_link  
+incoming_command_timeout: 0.1  
+num_outgoing_halt_msgs_to_publish: 0
+lower_singularity_threshold:  17 
+hard_stop_singularity_threshold: 30 
+joint_limit_margin: 0.15 
+cartesian_command_in_topic: delta_twist_cmds 
+joint_command_in_topic: delta_joint_cmds 
+joint_topic:  /joint_states
+status_topic: status 
+command_out_topic: /joint_group_position_controller/command
+check_collisions: true 
+collision_check_rate: 40 
+collision_check_type: threshold_distance
+self_collision_proximity_threshold: 0.0001 
+scene_collision_proximity_threshold: 0.05
+collision_distance_safety_factor: 1000 
+min_allowable_collision_distance: 0.02
